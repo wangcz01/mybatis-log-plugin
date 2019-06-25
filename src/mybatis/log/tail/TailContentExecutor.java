@@ -60,8 +60,6 @@ public class TailContentExecutor implements Disposable {
     private Runnable myFormatAction;
     private Computable<Boolean> myStopEnabled;
     private String myTitle = " ";//插件窗口标题
-    private String myHelpId = null;
-    private boolean myActivateToolWindow = true;
     private ConsoleView consoleView = null;
 
     public TailContentExecutor(@NotNull Project project) {
@@ -110,10 +108,6 @@ public class TailContentExecutor implements Disposable {
 
     public void run() {
         FileDocumentManager.getInstance().saveAllDocuments();
-
-        if (myHelpId != null) {
-            consoleView.setHelpId(myHelpId);
-        }
         Executor executor = TailRunExecutor.getRunExecutorInstance();
         DefaultActionGroup actions = new DefaultActionGroup();
 
@@ -131,7 +125,7 @@ public class TailContentExecutor implements Disposable {
 
             @Override
             public String getName() {
-                return myTitle;
+                return "";
             }
 
             @Nullable
@@ -141,7 +135,7 @@ public class TailContentExecutor implements Disposable {
             }
         }, new DefaultExecutionResult(), layoutUi);
 
-        final Content content = layoutUi.createContent("ConsoleContent", consolePanel, myTitle, AllIcons.Debugger.Console, consolePanel);
+        final Content content = layoutUi.createContent("ConsoleContent", consolePanel, "", AllIcons.Debugger.Console, consolePanel);
         layoutUi.addContent(content, 0, PlaceInGrid.right, false);
         layoutUi.getOptions().setLeftToolbar(createActionToolbar(consolePanel, consoleView, layoutUi, descriptor, executor), "RunnerToolbar");
 
@@ -156,10 +150,7 @@ public class TailContentExecutor implements Disposable {
         }
 
         ExecutionManager.getInstance(myProject).getContentManager().showRunContent(executor, descriptor);
-
-        if (myActivateToolWindow) {
-            activateToolWindow();
-        }
+        activateToolWindow();
     }
 
     @NotNull
