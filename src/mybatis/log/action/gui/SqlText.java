@@ -134,13 +134,4 @@ public class SqlText extends JFrame {
     private void onClose() {
         this.setVisible(false);
     }
-
-    public static void main(String[] args) {
-        SqlText dialog = new SqlText(null);
-        dialog.pack();
-        dialog.setSize(800, 600);
-        dialog.setLocationRelativeTo(null);
-        dialog.setVisible(true);
-//        System.exit(0);
-    }
 }

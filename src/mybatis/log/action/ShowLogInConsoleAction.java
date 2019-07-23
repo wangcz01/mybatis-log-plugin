@@ -1,6 +1,5 @@
 package mybatis.log.action;
 
-import com.intellij.ide.util.PropertiesComponent;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.project.DumbAwareAction;
 import com.intellij.openapi.project.Project;
@@ -9,8 +8,6 @@ import mybatis.log.action.gui.FilterSetting;
 import mybatis.log.action.gui.SqlText;
 import mybatis.log.tail.TailContentExecutor;
 import mybatis.log.util.ConfigUtil;
-import mybatis.log.util.StringConst;
-import org.apache.commons.lang.StringUtils;
 
 
 /**
@@ -23,7 +20,6 @@ public class ShowLogInConsoleAction extends DumbAwareAction {
     public ShowLogInConsoleAction(Project project) {
         super();
         ConfigUtil.init(project);
-        ConfigUtil.settingDialog = new FilterSetting(project);
         ConfigUtil.sqlTextDialog = new SqlText(project);
     }
 
@@ -46,16 +42,10 @@ public class ShowLogInConsoleAction extends DumbAwareAction {
         executor.withFormat(() -> ConfigUtil.setSqlFormat(project, !ConfigUtil.getSqlFormat(project)));
         executor.withFilter(() -> {
             //启动filter配置
-            FilterSetting dialog = ConfigUtil.settingDialog;
+            FilterSetting dialog = new FilterSetting(project);
             dialog.pack();
             dialog.setSize(600, 400);//配置大小
             dialog.setLocationRelativeTo(null);//位置居中显示
-            String[] filters = PropertiesComponent.getInstance(project).getValues(StringConst.FILTER_KEY);//读取过滤字符
-            if (filters != null && filters.length > 0) {
-                dialog.getTextArea().setText(StringUtils.join(filters, "\n"));
-            }
-            dialog.getPreparingTextField().setText(ConfigUtil.getPreparing(project));
-            dialog.getParametersTextField().setText(ConfigUtil.getParameters(project));
             dialog.setVisible(true);
         });
         executor.withText(() -> {
