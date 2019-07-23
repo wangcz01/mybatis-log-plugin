@@ -107,7 +107,7 @@ public class SqlText extends JFrame {
                         isEnd = true;
                     }
                     if(StringHelper.isNotEmpty(preparingLine) && StringHelper.isNotEmpty(parametersLine) && isEnd) {
-                        resultSql += RestoreSqlUtil.restoreSql(preparingLine, parametersLine) + "\n------------------------------------------------------------\n";
+                        resultSql += RestoreSqlUtil.restoreSql(project, preparingLine, parametersLine) + "\n------------------------------------------------------------\n";
                     }
                 }
                 if(StringHelper.isNotEmpty(resultSql)) {

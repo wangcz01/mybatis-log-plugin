@@ -24,6 +24,8 @@ public class ConfigUtil {
             setRunning(project, false);
             setSqlFormat(project, false);
             setIndexNum(project, 1);
+            setPreparing(project, StringConst.PREPARING);
+            setParameters(project, StringConst.PARAMETERS);
         }
     }
 
@@ -52,10 +54,16 @@ public class ConfigUtil {
     }
 
     public static String getPreparing(Project project) {
+        if(project == null) {
+            return StringConst.PREPARING;
+        }
         return PropertiesComponent.getInstance(project).getValue(StringConst.PREPARING_KEY);
     }
 
     public static String getParameters(Project project) {
+        if(project == null) {
+            return StringConst.PARAMETERS;
+        }
         return PropertiesComponent.getInstance(project).getValue(StringConst.PARAMETERS_KEY);
     }
 

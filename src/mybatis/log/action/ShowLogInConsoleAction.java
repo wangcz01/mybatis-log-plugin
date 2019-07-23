@@ -22,9 +22,9 @@ public class ShowLogInConsoleAction extends DumbAwareAction {
 
     public ShowLogInConsoleAction(Project project) {
         super();
+        ConfigUtil.init(project);
         ConfigUtil.settingDialog = new FilterSetting(project);
         ConfigUtil.sqlTextDialog = new SqlText(project);
-        ConfigUtil.init(project);
     }
 
     @Override
