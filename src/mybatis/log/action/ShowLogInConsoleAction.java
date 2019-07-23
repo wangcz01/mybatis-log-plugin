@@ -22,9 +22,8 @@ public class ShowLogInConsoleAction extends DumbAwareAction {
 
     public ShowLogInConsoleAction(Project project) {
         super();
-        ConfigUtil.properties = PropertiesComponent.getInstance(project);
-        ConfigUtil.settingDialog = new FilterSetting();
-        ConfigUtil.sqlTextDialog = new SqlText();
+        ConfigUtil.settingDialog = new FilterSetting(project);
+        ConfigUtil.sqlTextDialog = new SqlText(project);
         ConfigUtil.init(project);
     }
 
@@ -36,26 +35,27 @@ public class ShowLogInConsoleAction extends DumbAwareAction {
 
     public void showLogInConsole(final Project project) {
         if (project == null) return;
-        final String projectBasePath = project.getBasePath();
-        ConfigUtil.runningMap.put(projectBasePath, true);
+        ConfigUtil.setRunning(project, true);
         final TailContentExecutor executor = new TailContentExecutor(project);
         Disposer.register(project, executor);
         executor.withRerun(() -> showLogInConsole(project));
         executor.withStop(() -> {
-            ConfigUtil.runningMap.put(projectBasePath, false);
-            ConfigUtil.indexNumMap.put(projectBasePath, 1);
-        }, () -> ConfigUtil.runningMap.get(projectBasePath));
-        executor.withFormat(() -> ConfigUtil.sqlFormatMap.put(projectBasePath, !ConfigUtil.sqlFormatMap.get(projectBasePath)));
+            ConfigUtil.setRunning(project, false);
+            ConfigUtil.setIndexNum(project, 1);
+        }, () -> ConfigUtil.getRunning(project));
+        executor.withFormat(() -> ConfigUtil.setSqlFormat(project, !ConfigUtil.getSqlFormat(project)));
         executor.withFilter(() -> {
             //启动filter配置
             FilterSetting dialog = ConfigUtil.settingDialog;
             dialog.pack();
             dialog.setSize(600, 400);//配置大小
             dialog.setLocationRelativeTo(null);//位置居中显示
-            String[] filters = ConfigUtil.properties.getValues(StringConst.FILTER_KEY);//读取过滤字符
+            String[] filters = PropertiesComponent.getInstance(project).getValues(StringConst.FILTER_KEY);//读取过滤字符
             if (filters != null && filters.length > 0) {
                 dialog.getTextArea().setText(StringUtils.join(filters, "\n"));
             }
+            dialog.getPreparingTextField().setText(ConfigUtil.getPreparing(project));
+            dialog.getParametersTextField().setText(ConfigUtil.getParameters(project));
             dialog.setVisible(true);
         });
         executor.withText(() -> {

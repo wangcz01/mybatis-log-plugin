@@ -15,19 +15,55 @@ import java.util.Map;
  * @author ob
  */
 public class ConfigUtil {
-    public static PropertiesComponent properties;//filter setting
     public static FilterSetting settingDialog;
     public static SqlText sqlTextDialog;
     public static Map<String, ConsoleView> consoleViewMap = new HashMap<>();
-    public static Map<String, Boolean> runningMap = new HashMap<>();
-    public static Map<String, Boolean> sqlFormatMap = new HashMap<>();
-    public static Map<String, Integer> indexNumMap = new HashMap<>();
 
     public static void init(Project project) {
         if(project != null) {
-            ConfigUtil.runningMap.put(project.getBasePath(), false);
-            ConfigUtil.sqlFormatMap.put(project.getBasePath(), false);
-            ConfigUtil.indexNumMap.put(project.getBasePath(), 1);
+            setRunning(project, false);
+            setSqlFormat(project, false);
+            setIndexNum(project, 1);
         }
+    }
+
+    public static void setRunning(Project project, boolean value) {
+        PropertiesComponent.getInstance(project).setValue(StringConst.runningKey, value);
+    }
+
+    public static void setSqlFormat(Project project, boolean value) {
+        PropertiesComponent.getInstance(project).setValue(StringConst.sqlFormatKey, value);
+    }
+
+    public static void setIndexNum(Project project, int value) {
+        PropertiesComponent.getInstance(project).setValue(StringConst.indexNumKey, value, 1);
+    }
+
+    public static boolean getRunning(Project project) {
+        return PropertiesComponent.getInstance(project).getBoolean(StringConst.runningKey);
+    }
+
+    public static boolean getSqlFormat(Project project) {
+        return PropertiesComponent.getInstance(project).getBoolean(StringConst.sqlFormatKey);
+    }
+
+    public static int getIndexNum(Project project) {
+        return PropertiesComponent.getInstance(project).getInt(StringConst.indexNumKey, 1);
+    }
+
+    public static String getPreparing(Project project) {
+        return PropertiesComponent.getInstance(project).getValue(StringConst.PREPARING_KEY);
+    }
+
+    public static String getParameters(Project project) {
+        return PropertiesComponent.getInstance(project).getValue(StringConst.PARAMETERS_KEY);
+    }
+
+    public static void setPreparing(Project project, String value) {
+        PropertiesComponent.getInstance(project).setValue(StringConst.PREPARING_KEY, value);
+    }
+
+    public static void setParameters(Project project, String value) {
+        PropertiesComponent.getInstance(project).setValue(StringConst.PARAMETERS_KEY, value);
     }
 }

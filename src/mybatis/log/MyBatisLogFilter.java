@@ -2,6 +2,7 @@ package mybatis.log;
 
 import com.intellij.execution.filters.Filter;
 import com.intellij.execution.ui.ConsoleViewContentType;
+import com.intellij.ide.util.PropertiesComponent;
 import com.intellij.openapi.project.Project;
 import mybatis.log.hibernate.StringHelper;
 import mybatis.log.util.ConfigUtil;
@@ -29,10 +30,9 @@ public class MyBatisLogFilter implements Filter {
     @Override
     public Result applyFilter(final String currentLine, int endPoint) {
         if(this.project == null) return null;
-        final String projectBasePath = project.getBasePath();
-        if(ConfigUtil.runningMap.containsKey(projectBasePath) && ConfigUtil.runningMap.get(projectBasePath)) {
+        if(ConfigUtil.getBooleanValue(project, StringConst.runningKey)) {
             //过滤不显示的语句
-            String[] filters = ConfigUtil.properties.getValues(StringConst.FILTER_KEY);
+            String[] filters = PropertiesComponent.getInstance(project).getValues(StringConst.FILTER_KEY);
             if (filters != null && filters.length > 0 && StringUtils.isNotBlank(currentLine)) {
                 for (String filter : filters) {
                     if(StringUtils.isNotBlank(filter) && currentLine.toLowerCase().contains(filter.trim().toLowerCase())) {

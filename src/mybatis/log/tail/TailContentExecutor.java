@@ -233,7 +233,7 @@ public class TailContentExecutor implements Disposable {
 
         @Override
         public boolean isSelected(AnActionEvent e) {
-            return e.getProject() == null ? false : ConfigUtil.sqlFormatMap.get(e.getProject().getBasePath());
+            return e.getProject() == null ? false : ConfigUtil.getSqlFormat(e.getProject());
         }
 
         @Override
@@ -251,8 +251,8 @@ public class TailContentExecutor implements Disposable {
         public void actionPerformed(AnActionEvent e) {
             final Project project = e.getProject();
             if (project == null) return;
-            ConfigUtil.runningMap.put(project.getBasePath(), false);
-            ConfigUtil.indexNumMap.put(project.getBasePath(), 1);
+            ConfigUtil.setRunning(project, false);
+            ConfigUtil.setIndexNum(project, 1);
             super.actionPerformed(e);
         }
     }
