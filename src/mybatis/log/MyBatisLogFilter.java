@@ -4,7 +4,6 @@ import com.intellij.execution.filters.Filter;
 import com.intellij.execution.ui.ConsoleViewContentType;
 import com.intellij.ide.util.PropertiesComponent;
 import com.intellij.openapi.project.Project;
-import mybatis.log.hibernate.StringHelper;
 import mybatis.log.util.ConfigUtil;
 import mybatis.log.util.PrintUtil;
 import mybatis.log.util.RestoreSqlUtil;
@@ -44,7 +43,7 @@ public class MyBatisLogFilter implements Filter {
                 preparingLine = currentLine;
                 return null;
             }
-            if(StringHelper.isEmpty(preparingLine)) {
+            if(StringUtils.isEmpty(preparingLine)) {
                 return null;
             }
             parametersLine = currentLine.contains(ConfigUtil.getParameters(project)) ? currentLine : parametersLine + currentLine;
@@ -53,7 +52,7 @@ public class MyBatisLogFilter implements Filter {
             } else {
                 isEnd = true;
             }
-            if(StringHelper.isNotEmpty(preparingLine) && StringHelper.isNotEmpty(parametersLine) && isEnd) {
+            if(StringUtils.isNotEmpty(preparingLine) && StringUtils.isNotEmpty(parametersLine) && isEnd) {
                 int indexNum = ConfigUtil.getIndexNum(project);
                 String preStr = "--  " + indexNum + "  " + parametersLine.split(ConfigUtil.getParameters(project))[0].trim();//序号前缀字符串
                 ConfigUtil.setIndexNum(project, ++indexNum);

@@ -1,7 +1,6 @@
 package mybatis.log.action.gui;
 
 import com.intellij.openapi.project.Project;
-import mybatis.log.hibernate.StringHelper;
 import mybatis.log.util.BareBonesBrowserLaunch;
 import mybatis.log.util.ConfigUtil;
 import mybatis.log.util.RestoreSqlUtil;
@@ -69,9 +68,9 @@ public class SqlText extends JFrame {
             return;
         }
         String originalText = originalTextArea.getText();
-        String preparing = ConfigUtil.getPreparing(project);
-        String parameters = ConfigUtil.getParameters(project);
-        if(originalText.contains(preparing) && originalText.contains(parameters)) {
+        final String PREPARING = ConfigUtil.getPreparing(project);
+        final String PARAMETERS = ConfigUtil.getParameters(project);
+        if(originalText.contains(PREPARING) && originalText.contains(PARAMETERS)) {
             String[] sqlArr = originalText.split("\n");
             if(sqlArr != null && sqlArr.length >= 2) {
                 String resultSql = "";
@@ -80,16 +79,16 @@ public class SqlText extends JFrame {
                     if(StringUtils.isBlank(currentLine)) {
                         continue;
                     }
-                    if(currentLine.contains(preparing)) {
+                    if(currentLine.contains(PREPARING)) {
                         preparingLine = currentLine;
                         continue;
                     } else {
                         currentLine += "\n";
                     }
-                    if(StringHelper.isEmpty(preparingLine)) {
+                    if(StringUtils.isEmpty(preparingLine)) {
                         continue;
                     }
-                    if(currentLine.contains(parameters)) {
+                    if(currentLine.contains(PARAMETERS)) {
                         parametersLine = currentLine;
                     } else {
                         if(StringUtils.isBlank(parametersLine)) {
@@ -106,11 +105,11 @@ public class SqlText extends JFrame {
                     } else {
                         isEnd = true;
                     }
-                    if(StringHelper.isNotEmpty(preparingLine) && StringHelper.isNotEmpty(parametersLine) && isEnd) {
+                    if(StringUtils.isNotEmpty(preparingLine) && StringUtils.isNotEmpty(parametersLine) && isEnd) {
                         resultSql += RestoreSqlUtil.restoreSql(project, preparingLine, parametersLine) + "\n------------------------------------------------------------\n";
                     }
                 }
-                if(StringHelper.isNotEmpty(resultSql)) {
+                if(StringUtils.isNotEmpty(resultSql)) {
                     this.resultTextArea.setText(resultSql);
                 }
             } else {
