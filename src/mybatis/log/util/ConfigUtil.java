@@ -14,6 +14,7 @@ import java.util.Map;
  * @author ob
  */
 public class ConfigUtil {
+    public static boolean active = false;
     public static SqlText sqlTextDialog;
     public static Map<String, ConsoleView> consoleViewMap = new HashMap<>();
 

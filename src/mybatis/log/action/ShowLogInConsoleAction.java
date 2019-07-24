@@ -19,6 +19,7 @@ public class ShowLogInConsoleAction extends DumbAwareAction {
 
     public ShowLogInConsoleAction(Project project) {
         super();
+        ConfigUtil.active = true;
         ConfigUtil.init(project);
         ConfigUtil.sqlTextDialog = new SqlText(project);
     }
