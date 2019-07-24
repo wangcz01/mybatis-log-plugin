@@ -20,12 +20,13 @@ import java.util.StringTokenizer;
  */
 public class BasicFormatterImpl implements Formatter {
 
-    private static final Set<String> BEGIN_CLAUSES = new HashSet<String>();
-    private static final Set<String> END_CLAUSES = new HashSet<String>();
-    private static final Set<String> LOGICAL = new HashSet<String>();
-    private static final Set<String> QUANTIFIERS = new HashSet<String>();
-    private static final Set<String> DML = new HashSet<String>();
-    private static final Set<String> MISC = new HashSet<String>();
+    private static final Set<String> BEGIN_CLAUSES = new HashSet<>();
+    private static final Set<String> END_CLAUSES = new HashSet<>();
+    private static final Set<String> LOGICAL = new HashSet<>();
+    private static final Set<String> QUANTIFIERS = new HashSet<>();
+    private static final Set<String> DML = new HashSet<>();
+    private static final Set<String> MISC = new HashSet<>();
+    private static final String WHITESPACE = " \n\r\f\t";
 
     static {
         BEGIN_CLAUSES.add( "left" );
@@ -97,7 +98,7 @@ public class BasicFormatterImpl implements Formatter {
         public FormatProcess(String sql) {
             tokens = new StringTokenizer(
                     sql,
-                    "()+*/-=<>'`\"[]," + StringHelper.WHITESPACE,
+                    "()+*/-=<>'`\"[]," + WHITESPACE,
                     true
             );
         }
@@ -365,7 +366,7 @@ public class BasicFormatterImpl implements Formatter {
         }
 
         private static boolean isWhitespace(String token) {
-            return StringHelper.WHITESPACE.contains( token );
+            return WHITESPACE.contains( token );
         }
 
         private void newline() {

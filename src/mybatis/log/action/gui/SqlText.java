@@ -1,9 +1,9 @@
 package mybatis.log.action.gui;
 
-import mybatis.log.hibernate.StringHelper;
+import com.intellij.openapi.project.Project;
 import mybatis.log.util.BareBonesBrowserLaunch;
+import mybatis.log.util.ConfigUtil;
 import mybatis.log.util.RestoreSqlUtil;
-import mybatis.log.util.StringConst;
 import org.apache.commons.lang3.StringUtils;
 
 import javax.swing.*;
@@ -35,11 +35,11 @@ public class SqlText extends JFrame {
     private JButton alipayDonate;
     private JButton githubButton;
 
-    public SqlText() {
+    public SqlText(Project project) {
         this.setTitle("restore sql from text"); //设置标题
         setContentPane(panel1);
         getRootPane().setDefaultButton(buttonOK);
-        buttonOK.addActionListener(e -> onOK());
+        buttonOK.addActionListener(e -> onOK(project));
         buttonCopy.addActionListener(e -> onCopy());
         buttonClear.addActionListener(e -> onClear());
         buttonClose.addActionListener(e -> onClose());
@@ -62,13 +62,15 @@ public class SqlText extends JFrame {
         panel1.registerKeyboardAction(e -> onClose(), KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
     }
 
-    private void onOK() {
+    private void onOK(Project project) {
         if(originalTextArea == null || StringUtils.isBlank(originalTextArea.getText())) {
             this.resultTextArea.setText("Can't restore sql from text.");
             return;
         }
         String originalText = originalTextArea.getText();
-        if(originalText.contains(StringConst.PARAMETERS) && (originalText.contains(StringConst.PREPARING) || originalText.contains(StringConst.EXECUTING))) {
+        final String PREPARING = ConfigUtil.getPreparing(project);
+        final String PARAMETERS = ConfigUtil.getParameters(project);
+        if(originalText.contains(PREPARING) && originalText.contains(PARAMETERS)) {
             String[] sqlArr = originalText.split("\n");
             if(sqlArr != null && sqlArr.length >= 2) {
                 String resultSql = "";
@@ -77,19 +79,19 @@ public class SqlText extends JFrame {
                     if(StringUtils.isBlank(currentLine)) {
                         continue;
                     }
-                    if(currentLine.contains(StringConst.PREPARING) || currentLine.contains(StringConst.EXECUTING)) {
+                    if(currentLine.contains(PREPARING)) {
                         preparingLine = currentLine;
                         continue;
                     } else {
                         currentLine += "\n";
                     }
-                    if(StringHelper.isEmpty(preparingLine)) {
+                    if(StringUtils.isEmpty(preparingLine)) {
                         continue;
                     }
-                    if(currentLine.contains(StringConst.PARAMETERS)) {
+                    if(currentLine.contains(PARAMETERS)) {
                         parametersLine = currentLine;
                     } else {
-                        if(org.apache.commons.lang.StringUtils.isBlank(parametersLine)) {
+                        if(StringUtils.isBlank(parametersLine)) {
                             continue;
                         }
                         parametersLine += currentLine;
@@ -103,12 +105,11 @@ public class SqlText extends JFrame {
                     } else {
                         isEnd = true;
                     }
-                    if(StringHelper.isNotEmpty(preparingLine) && StringHelper.isNotEmpty(parametersLine) && isEnd) {
-                        resultSql += RestoreSqlUtil.restoreSql(preparingLine, parametersLine)
-                                + "\n------------------------------------------------------------\n";
+                    if(StringUtils.isNotEmpty(preparingLine) && StringUtils.isNotEmpty(parametersLine) && isEnd) {
+                        resultSql += RestoreSqlUtil.restoreSql(project, preparingLine, parametersLine) + "\n------------------------------------------------------------\n";
                     }
                 }
-                if(StringHelper.isNotEmpty(resultSql)) {
+                if(StringUtils.isNotEmpty(resultSql)) {
                     this.resultTextArea.setText(resultSql);
                 }
             } else {
@@ -132,14 +133,5 @@ public class SqlText extends JFrame {
 
     private void onClose() {
         this.setVisible(false);
-    }
-
-    public static void main(String[] args) {
-        SqlText dialog = new SqlText();
-        dialog.pack();
-        dialog.setSize(800, 600);
-        dialog.setLocationRelativeTo(null);
-        dialog.setVisible(true);
-//        System.exit(0);
     }
 }
