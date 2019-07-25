@@ -25,7 +25,7 @@ The left buttons function:<br/>
 Support the mybatis's output format below:<br/>
 
 
-`2016-11-11 16:46:29.316 DEBUG selectSql1 -  ==>  Preparing: select * from t_table where name = ?`
+`2016-11-11 16:46:29.316 DEBUG selectSql1 -  ==>  Preparing: select * from t_table where name = ?`  
 `2016-11-11 16:46:29.343 DEBUG selectSql1 -  ==> Parameters: hello(String)`
 
 Use "Preparing:" and "Parameters:" characters to split the log sql.<br/>
@@ -66,7 +66,7 @@ And it will output the whole sql:<br/>
 ---
 支持mybatis的输出格式如下：<br/>
 
-`2016-11-11 16:46:29.316 DEBUG selectSql1 -  ==>  Preparing: select * from t_table where name = ?`
+`2016-11-11 16:46:29.316 DEBUG selectSql1 -  ==>  Preparing: select * from t_table where name = ?`  
 `2016-11-11 16:46:29.343 DEBUG selectSql1 -  ==> Parameters: hello(String)`
 
 以 "Preparing:" 和 "Parameters:" 作为分割符进行解析。<br/>
