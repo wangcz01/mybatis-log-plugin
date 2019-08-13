@@ -9,7 +9,7 @@ It will generate sql statements with replace ? to the really param value.<br/>
 Through the "Tools -> MyBatis Log Plugin" menu you can tail the sql log.<br/>
 You can selected the "Filter" button on the left to filter the contents don't wanna display.<br/>
 You can selected the "Format Sql" button on the left to format the generate sql statements.<br/>
-**Prerequisite: sql log must contain "Preparing:" and "Parameters:"**<br/>
+**Parse Config: The output SQL log must contain a identifiable prefix for normal parsing, such as: "Preparing:" and "Parameters:"**<br/>
 
 The left buttons function:<br/>
 
@@ -51,7 +51,7 @@ And it will output the whole sql:<br/>
 通过 "Tools -> MyBatis Log Plugin" 这个菜单可以实时输出sql日志。<br/>
 点击窗口左边的 "Filter" 按钮，可以过滤不想要输出的sql语句。<br/>
 点击窗口左边的 "Format Sql" 按钮，可以格式化输出的sql语句。<br/>
-**前提条件：输出的sql日志必须包含"Preparing:"和"Parameters:"才能正常解析。**<br/>
+**解析配置：输出的sql日志必须包含可识别的前缀才能正常解析，如："Preparing:"和"Parameters:"**<br/>
 
 左边几个按钮的作用：<br/>
 
