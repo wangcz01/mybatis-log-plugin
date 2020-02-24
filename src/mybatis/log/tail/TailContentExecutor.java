@@ -14,7 +14,6 @@ import com.intellij.execution.ui.ConsoleView;
 import com.intellij.execution.ui.RunContentDescriptor;
 import com.intellij.execution.ui.RunnerLayoutUi;
 import com.intellij.execution.ui.actions.CloseAction;
-import com.intellij.execution.ui.layout.PlaceInGrid;
 import com.intellij.icons.AllIcons;
 import com.intellij.openapi.Disposable;
 import com.intellij.openapi.actionSystem.ActionGroup;
@@ -126,7 +125,7 @@ public class TailContentExecutor implements Disposable {
 
         // Create runner UI layout
         final RunnerLayoutUi.Factory factory = RunnerLayoutUi.Factory.getInstance(myProject);
-        final RunnerLayoutUi layoutUi = factory.create("Tail", "Tail", "Tail", myProject);
+        final RunnerLayoutUi layoutUi = factory.create("SQL", "SQL", "SQL", myProject);
 
         final JComponent consolePanel = createConsolePanel(consoleView, actions);
         RunContentDescriptor descriptor = new RunContentDescriptor(new RunProfile() {
@@ -149,9 +148,9 @@ public class TailContentExecutor implements Disposable {
         }, new DefaultExecutionResult(), layoutUi);
         descriptor.setExecutionId(System.nanoTime());
         //第二层名称显示
-        final Content content = layoutUi.createContent("ConsoleContent", consolePanel, myTitle, AllIcons.Debugger.Console, consolePanel);
+        final Content content = layoutUi.createContent("ConsoleContent", consolePanel, "executable sql statements", null, null);
         content.setCloseable(false);
-        layoutUi.addContent(content, 0, PlaceInGrid.left, false);
+        layoutUi.addContent(content);
         layoutUi.getOptions().setLeftToolbar(createActionToolbar(consolePanel, consoleView, layoutUi, descriptor, executor), "RunnerToolbar");
 
         Disposer.register(descriptor, this);
