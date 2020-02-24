@@ -1,3 +1,7 @@
+![mybatis-log-plugin](https://img.shields.io/jetbrains/plugin/v/10065-mybatis-log-plugin?label=version&style=flat-square)
+[![mybatis-log-plugin](https://img.shields.io/jetbrains/plugin/d/10065-mybatis-log-plugin?style=flat-square)](https://plugins.jetbrains.com/plugin/10065-mybatis-log-plugin/versions)&nbsp;
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg?logo=paypal&style=flat-square)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=2FQY2FH24H4LC&item_name=MyBatis+Log+Plugin&currency_code=USD&source=url)&nbsp;
+
 MyBatis Log Plugin
 ==============================
 ![MyBatisLogPlugin.gif](https://raw.githubusercontent.com/kookob/mybatis-log-plugin/master/snapshot/MyBatisLogPlugin.gif)
@@ -35,10 +39,6 @@ And it will output the whole sql:<br/>
 **Download Plugin**
 ---
 [mybatis-log-plugin.jar](https://plugins.jetbrains.com/plugin/10065-mybatis-log-plugin "Download Plugin")<br/>
-
-**Donations are welcomed**
----
-[PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=2FQY2FH24H4LC&item_name=MyBatis+Log+Plugin&currency_code=USD&source=url "Donate via PayPal")<br/>
 
 
 ---

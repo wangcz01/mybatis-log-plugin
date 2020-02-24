@@ -59,8 +59,9 @@ public class TailContentExecutor implements Disposable {
     private Runnable myStopAction;
     private Runnable myFormatAction;
     private Computable<Boolean> myStopEnabled;
-    private String myTitle = " ";//插件窗口标题
+    private String myTitle = "";//插件窗口标题
     private ConsoleView consoleView = null;
+    private boolean myActivateToolWindow = true;
 
     public TailContentExecutor(@NotNull Project project) {
         myProject = project;
@@ -99,6 +100,11 @@ public class TailContentExecutor implements Disposable {
         return this;
     }
 
+    public TailContentExecutor withActivateToolWindow(boolean activateToolWindow) {
+        myActivateToolWindow = activateToolWindow;
+        return this;
+    }
+
     private ConsoleView createConsole(@NotNull Project project) {
         TextConsoleBuilder consoleBuilder = TextConsoleBuilderFactory.getInstance().createBuilder(project);
         consoleBuilder.filters(myFilterList);
@@ -107,8 +113,15 @@ public class TailContentExecutor implements Disposable {
     }
 
     public void run() {
+        if (myProject.isDisposed()) {
+            return;
+        }
+
         FileDocumentManager.getInstance().saveAllDocuments();
         Executor executor = TailRunExecutor.getRunExecutorInstance();
+        if(executor == null) {
+            return;
+        }
         DefaultActionGroup actions = new DefaultActionGroup();
 
         // Create runner UI layout
@@ -134,12 +147,15 @@ public class TailContentExecutor implements Disposable {
                 return null;
             }
         }, new DefaultExecutionResult(), layoutUi);
-
-        final Content content = layoutUi.createContent("ConsoleContent", consolePanel, "", AllIcons.Debugger.Console, consolePanel);
-        layoutUi.addContent(content, 0, PlaceInGrid.right, false);
+        descriptor.setExecutionId(System.nanoTime());
+        //第二层名称显示
+        final Content content = layoutUi.createContent("ConsoleContent", consolePanel, myTitle, AllIcons.Debugger.Console, consolePanel);
+        content.setCloseable(false);
+        layoutUi.addContent(content, 0, PlaceInGrid.left, false);
         layoutUi.getOptions().setLeftToolbar(createActionToolbar(consolePanel, consoleView, layoutUi, descriptor, executor), "RunnerToolbar");
 
-        Disposer.register(this, descriptor);
+        Disposer.register(descriptor, this);
+        Disposer.register(descriptor, content);
         Disposer.register(content, consoleView);
         if (myStopAction != null) {
             Disposer.register(consoleView, () -> myStopAction.run());
@@ -150,7 +166,9 @@ public class TailContentExecutor implements Disposable {
         }
 
         ExecutionManager.getInstance(myProject).getContentManager().showRunContent(executor, descriptor);
-        activateToolWindow();
+        if (myActivateToolWindow) {
+            activateToolWindow();
+        }
     }
 
     @NotNull
@@ -251,6 +269,7 @@ public class TailContentExecutor implements Disposable {
         public void actionPerformed(AnActionEvent e) {
             final Project project = e.getProject();
             if (project == null) return;
+            ConfigUtil.active = false;
             ConfigUtil.setRunning(project, false);
             ConfigUtil.setIndexNum(project, 1);
             super.actionPerformed(e);

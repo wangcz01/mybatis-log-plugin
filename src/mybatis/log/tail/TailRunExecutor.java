@@ -2,7 +2,6 @@ package mybatis.log.tail;
 
 import com.intellij.execution.Executor;
 import com.intellij.execution.ExecutorRegistry;
-import com.intellij.icons.AllIcons;
 import mybatis.log.Icons;
 import mybatis.log.util.StringConst;
 import org.jetbrains.annotations.NotNull;
@@ -11,12 +10,11 @@ import javax.swing.*;
 
 /**
  * Window Config
+ *
  * @author ob
  */
 public class TailRunExecutor extends Executor {
-	public static final Icon ToolWindowRun = Icons.MyBatisIcon;
-
-	public static final String TOOLWINDOWS_ID = "MyBatis Log";
+    public static final String TOOLWINDOWS_ID = "MyBatis Log";
 
 	@Override
 	@NotNull
@@ -29,21 +27,21 @@ public class TailRunExecutor extends Executor {
 		return TOOLWINDOWS_ID;
 	}
 
-	@Override
-	public Icon getToolWindowIcon() {
-		return ToolWindowRun;
-	}
+    @Override
+    public Icon getToolWindowIcon() {
+        return Icons.MyBatisIcon;
+    }
 
-	@Override
-	@NotNull
-	public Icon getIcon() {
-		return ToolWindowRun;
-	}
+    @Override
+    @NotNull
+    public Icon getIcon() {
+        return Icons.MyBatisIcon;
+    }
 
-	@Override
-	public Icon getDisabledIcon() {
-		return AllIcons.Process.DisabledRun;
-	}
+    @Override
+    public Icon getDisabledIcon() {
+        return Icons.DisabledRunIcon;
+    }
 
 	@Override
 	public String getDescription() {

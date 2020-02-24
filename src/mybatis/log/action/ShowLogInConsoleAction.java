@@ -56,6 +56,7 @@ public class ShowLogInConsoleAction extends DumbAwareAction {
             sqlText.setLocationRelativeTo(null);//位置居中显示
             sqlText.setVisible(true);
         });
+        executor.withActivateToolWindow(true);
         executor.run();
     }
 
