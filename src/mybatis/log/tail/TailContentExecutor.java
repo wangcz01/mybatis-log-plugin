@@ -14,6 +14,7 @@ import com.intellij.execution.ui.ConsoleView;
 import com.intellij.execution.ui.RunContentDescriptor;
 import com.intellij.execution.ui.RunnerLayoutUi;
 import com.intellij.execution.ui.actions.CloseAction;
+import com.intellij.execution.ui.layout.PlaceInGrid;
 import com.intellij.icons.AllIcons;
 import com.intellij.openapi.Disposable;
 import com.intellij.openapi.actionSystem.ActionGroup;
@@ -148,13 +149,12 @@ public class TailContentExecutor implements Disposable {
         }, new DefaultExecutionResult(), layoutUi);
         descriptor.setExecutionId(System.nanoTime());
         //第二层名称显示
-        final Content content = layoutUi.createContent("ConsoleContent", consolePanel, "executable sql statements", null, null);
+        final Content content = layoutUi.createContent("ConsoleContent", consolePanel, "executable sql statements", AllIcons.Debugger.Console, consolePanel);
         content.setCloseable(false);
         layoutUi.addContent(content);
         layoutUi.getOptions().setLeftToolbar(createActionToolbar(consolePanel, consoleView, layoutUi, descriptor, executor), "RunnerToolbar");
 
         Disposer.register(descriptor, this);
-        Disposer.register(descriptor, content);
         Disposer.register(content, consoleView);
         if (myStopAction != null) {
             Disposer.register(consoleView, () -> myStopAction.run());
