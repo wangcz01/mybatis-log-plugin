@@ -57,6 +57,7 @@
         <!-- Add your extensions here -->
         <consoleFilterProvider implementation="mybatis.log.MyBatisLogProvider"/>
         <executor implementation="mybatis.log.tail.TailRunExecutor" id="MyBatisLogTail"/>
+        <postStartupActivity implementation="mybatis.log.MyBatisLogStartupActivity"/>
     </extensions>
 
     <actions>

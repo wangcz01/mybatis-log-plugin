@@ -73,4 +73,12 @@ public class ConfigUtil {
     public static void setParameters(Project project, String value) {
         PropertiesComponent.getInstance(project).setValue(StringConst.PARAMETERS_KEY, value);
     }
+
+    public static int getStartup(Project project) {
+        return PropertiesComponent.getInstance(project).getInt(StringConst.STARTUP_KEY, 1);
+    }
+
+    public static void setStartup(Project project, int value) {
+        PropertiesComponent.getInstance(project).setValue(StringConst.STARTUP_KEY, value, 1);
+    }
 }
