@@ -14,7 +14,6 @@ import com.intellij.execution.ui.ConsoleView;
 import com.intellij.execution.ui.RunContentDescriptor;
 import com.intellij.execution.ui.RunnerLayoutUi;
 import com.intellij.execution.ui.actions.CloseAction;
-import com.intellij.execution.ui.layout.PlaceInGrid;
 import com.intellij.icons.AllIcons;
 import com.intellij.openapi.Disposable;
 import com.intellij.openapi.actionSystem.ActionGroup;
@@ -177,7 +176,10 @@ public class TailContentExecutor implements Disposable {
         actionGroup.add(new FormatAction());
         actionGroup.add(new RerunAction(consolePanel, consoleView));
         actionGroup.add(new StopAction());
-        actionGroup.add(new MyCloseAction(runExecutorInstance, contentDescriptor, myProject));
+//        actionGroup.add(new MyCloseAction(runExecutorInstance, contentDescriptor, myProject));
+        actionGroup.add(consoleView.createConsoleActions()[2]);
+        actionGroup.add(consoleView.createConsoleActions()[3]);
+        actionGroup.add(consoleView.createConsoleActions()[5]);
         return actionGroup;
     }
 
@@ -189,7 +191,7 @@ public class TailContentExecutor implements Disposable {
         JPanel panel = new JPanel();
         panel.setLayout(new BorderLayout());
         panel.add(view.getComponent(), BorderLayout.CENTER);
-        panel.add(createToolbar(actions), BorderLayout.WEST);
+//        panel.add(createToolbar(actions), BorderLayout.WEST);
         return panel;
     }
 
