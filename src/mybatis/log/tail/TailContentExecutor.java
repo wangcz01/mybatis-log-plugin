@@ -123,11 +123,9 @@ public class TailContentExecutor implements Disposable {
             return;
         }
         DefaultActionGroup actions = new DefaultActionGroup();
-
         // Create runner UI layout
         final RunnerLayoutUi.Factory factory = RunnerLayoutUi.Factory.getInstance(myProject);
         final RunnerLayoutUi layoutUi = factory.create("SQL", "SQL", "SQL", myProject);
-
         final JComponent consolePanel = createConsolePanel(consoleView, actions);
         RunContentDescriptor descriptor = new RunContentDescriptor(new RunProfile() {
             @Nullable
@@ -138,7 +136,8 @@ public class TailContentExecutor implements Disposable {
 
             @Override
             public String getName() {
-                return "";
+                //第一层名称显示
+                return "Sql";
             }
 
             @Nullable
