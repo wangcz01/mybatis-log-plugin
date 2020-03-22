@@ -62,5 +62,5 @@ https://github.com/kookob/mybatis-log-plugin/wiki/Plugin-Manual
 所以目前新插件是收费状态，并且给它设定了一个最低的价格($1/year)。  
 如果你愿意体验并支持新的插件，请访问地址：  
 [mybatis-log-plugin](https://plugins.jetbrains.com/plugin/13905-mybatis-log-plugin)  
-要是效果不错，后续可能专门花时间开发一些新的收费插件，希望各位能够理解并支持。  
+后续可能会开发一些新的插件，希望各位能够理解并支持。  
 谢谢！
