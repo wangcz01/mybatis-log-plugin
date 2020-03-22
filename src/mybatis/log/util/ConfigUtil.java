@@ -3,7 +3,6 @@ package mybatis.log.util;
 import com.intellij.execution.ui.ConsoleView;
 import com.intellij.ide.util.PropertiesComponent;
 import com.intellij.openapi.project.Project;
-import mybatis.log.action.gui.SqlText;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -15,7 +14,6 @@ import java.util.Map;
  */
 public class ConfigUtil {
     public static boolean active = false;
-    public static SqlText sqlTextDialog;
     public static Map<String, ConsoleView> consoleViewMap = new HashMap<>();
 
     public static void init(Project project) {
@@ -74,11 +72,4 @@ public class ConfigUtil {
         PropertiesComponent.getInstance(project).setValue(StringConst.PARAMETERS_KEY, value);
     }
 
-    public static int getStartup(Project project) {
-        return PropertiesComponent.getInstance(project).getInt(StringConst.STARTUP_KEY, 1);
-    }
-
-    public static void setStartup(Project project, int value) {
-        PropertiesComponent.getInstance(project).setValue(StringConst.STARTUP_KEY, value, 1);
-    }
 }
