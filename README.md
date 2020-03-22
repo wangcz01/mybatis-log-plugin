@@ -31,16 +31,16 @@ MyBatis Log Plugin output executable sql statements:
  select *
  FROM t_table
  WHERE name = 'hello';
-------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------
 --  2  MyBatis Log Test: INFO sql2 -  ==>
  update t_table set name = 'world'
  WHERE id = 123;
-------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------
 --  3  MyBatis Log Test: WARN sql3 -  ==>
  delete
  FROM t_table
  WHERE id = 123;
-------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------
 --  4  MyBatis Log Test: ERROR sql4 - ==>
  select *
  FROM t_table order by id asc;
@@ -50,5 +50,17 @@ MyBatis Log Plugin output executable sql statements:
 https://github.com/kookob/mybatis-log-plugin/wiki/Plugin-Manual
 
 ## Download
-[mybatis-log-plugin.jar](https://plugins.jetbrains.com/plugin/10065-mybatis-log-plugin "Download Plugin")<br/>
+[mybatis-log-plugin.jar](https://plugins.jetbrains.com/plugin/13905-mybatis-log-plugin "Download Plugin")  
 
+## 关于插件
+因为插件之前实现的机制并不好，导致经常出现一些版本兼容、注册失败以及性能的问题。  
+所以此插件旧版本(2.*)后续不再维护，将来有可能会被移除。  
+如果该插件旧版本在你机器上运行良好，并且你选择继续使用旧版本，也是完全可以的。  
+另外我花了一些精力用更好的方式重新实现了一个插件，在性能、样式、体验上面都做了优化。  
+新插件运行起来会比较舒服，而且更加稳定，应该不会有什么问题。  
+然后有看到官方marketplace启动不久，想着新插件发布上去体验下流程并试下效果。  
+所以目前新插件是收费状态，并且给它设定了一个最低的价格($1/year)。  
+如果你愿意体验并支持新的插件，请访问地址：  
+[mybatis-log-plugin](https://plugins.jetbrains.com/plugin/13905-mybatis-log-plugin)  
+要是效果不错，后续可能专门花时间开发一些新的收费插件，希望各位能够理解并支持。  
+谢谢！
