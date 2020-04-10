@@ -6,46 +6,33 @@
 
     <description>
     <![CDATA[
-      MyBatis Log Plugin
-      <br/>
-      -----------------------------------------------------------------------------------------------------------------------
-      <br/>
-      Restore the mybatis generate sql to original whole sql.<br/>
-      It will generate sql statements with replace ? to the really param value.<br/>
-      Through the "Tools -> MyBatis Log Plugin" menu you can tail the sql log.<br/>
-      You can selected the "Filter" button on the left to filter the contents don't wanna display.<br/>
-      You can selected the "Format Sql" button on the left to format the generate sql statements.<br/>
-      You can select the console sql log and right click "Restore Sql from Selection" menu to restore sql.<br/>
-      Prerequisite: sql log must contain "Preparing:" and "Parameters:" <br/>
-      -----------------------------------------------------------------------------------------------------------------------
-      <br/>
-      把 mybatis 输出的sql日志还原成完整的sql语句。<br/>
-      将日志输出的sql语句中的问号 ? 替换成真正的参数值。<br/>
-      通过 "Tools -> MyBatis Log Plugin" 菜单或快捷键 "Ctrl+Shift+Alt+O" 启用。<br/>
-      点击窗口左边的 "Filter" 按钮，可以过滤不想要输出的sql语句。<br/>
-      点击窗口左边的 "Format Sql" 按钮，可以格式化输出的sql语句。<br/>
-      选中console的sql日志，右击 "Restore Sql from Selection" 菜单可以还原sql语句。<br/>
-      前提条件：输出的sql日志必须包含"Preparing:"和"Parameters:"才能正常解析。<br/>
-      <br/>
-      <a href="https://github.com/kookob/mybatis-log-plugin">Github</a> | <a href="https://github.com/kookob/mybatis-log-plugin/issues">Issues</a><br/>
-      <br/>
-      Donate: <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=2FQY2FH24H4LC&item_name=MyBatis+Log+Plugin&currency_code=USD&source=url">PayPal</a>
-      | <a href="https://github.com/kookob/mybatis-log-plugin/blob/master/DONATE.md">支付宝&微信</a><br/>
-      <br/>
-      <img src="https://plugins.jetbrains.com/files/10065/screenshot_17367.png" />
+        <b>Restore mybatis sql log to original whole executable sql.</b>
+        <div>Due to the poor implementation mechanism of this plugin, some version compatibility problems, registration failures, and performance problems often occur.</div>
+        <div>Therefore, this plugin is no longer maintained and may be removed in the future.</div>
+        <div>If the plugin works well on your machine, and you choose to continue using this version, there is no problem at all.</div>
+        <div>I reimplemented the plugin in a better way, uploaded it to the official Marketplace, and set a minimum price ($1/year).</div>
+        <div>If you would like to experience and support the new plugin, please visit the following address:</div>
+        <div><a href="https://plugins.jetbrains.com/plugin/13905-mybatis-log-plugin"><b>MyBatis Log Plugin</b></a></div>
+        <div>Thank you!</div>
+        <div>------------------------------------------------------------</div>
+        <div>这个插件因为原先的实现机制并不好，导致经常出现一些版本兼容、注册失败以及性能的问题。</div>
+        <div>所以此插件后续不再维护，将来有可能会被移除。</div>
+        <div>如果该插件在你机器上运行良好，并且你选择继续使用此版本，也是完全可以的。</div>
+        <div>另外我用更好的方式重新实现了一个插件，并上传到官方的Marketplace，且设置了一个最低的价格($1/year)。</div>
+        <div>如果你愿意体验并支持新的插件，请访问下面地址：
+        <div><a href="https://plugins.jetbrains.com/plugin/13905-mybatis-log-plugin"><b>MyBatis Log Plugin</b></a></div>
+        <div>谢谢！</div>
     ]]>
     </description>
 
     <change-notes>
     <![CDATA[
-        <a href="https://github.com/kookob/mybatis-log-plugin/wiki/change-notes">change notes</a>
-        <br/>
-        <a href="https://github.com/kookob/mybatis-log-plugin/wiki/更新日志">更新日志</a>
+        <a href="https://github.com/kookob/mybatis-log-plugin/wiki/change-notes">Change Notes</a>
     ]]>
     </change-notes>
 
     <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
-    <idea-version since-build="141.0"/>
+    <idea-version since-build="191" until-build="193.*"/>
 
     <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
          on how to target different products -->
@@ -57,19 +44,18 @@
         <!-- Add your extensions here -->
         <consoleFilterProvider implementation="mybatis.log.MyBatisLogProvider"/>
         <executor implementation="mybatis.log.tail.TailRunExecutor" id="MyBatisLogTail"/>
-        <postStartupActivity implementation="mybatis.log.MyBatisLogStartupActivity"/>
     </extensions>
 
     <actions>
         <!-- Add your actions here -->
-        <action id="TailMyBatisLog" class="mybatis.log.action.TailMyBatisLog" icon="/mybatis/log/icon/mybatis.png"
+        <action id="TailMyBatisLog0" class="mybatis.log.action.TailMyBatisLog" icon="/mybatis/log/icon/mybatis.png"
                 text="MyBatis Log Plugin" description="MyBatis Log Plugin">
             <add-to-group group-id="ToolsMenu" anchor="last"/>
             <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt shift O"/>
         </action>
 
         <!-- restore sql from selection -->
-        <action class="mybatis.log.action.RestoreSqlForSelection" id="RestoreSqlAction" text="Restore Sql from Selection"
+        <action class="mybatis.log.action.RestoreSqlForSelection" id="RestoreSqlAction0" text="Restore Sql from Selection"
                 description="Restore Sql from Selection">
             <add-to-group group-id="EditorPopupMenu" anchor="last"/>
             <add-to-group group-id="ConsoleEditorPopupMenu" anchor="before" relative-to-action="ConsoleView.ClearAll"/>

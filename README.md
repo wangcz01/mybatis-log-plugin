@@ -10,11 +10,11 @@
 - Select the console sql log and right-click "Restore Sql" menu to restore sql.
 
 ## Button Features
-- Sql Text: Restore sql from text
-- Filter: Filter setting
-- Format Sql: Output beautiful formatted sql statements
-- Rerun: Rerun this plugin
-- Stop: Stop filter the sql log
+- **Sql Text**: Restore sql from text
+- **Filter**: Filter setting
+- **Format Sql**: Output beautiful formatted sql statements
+- **Rerun**: Rerun this plugin
+- **Stop**: Stop filter the sql log
 
 ## Example
 ```sql
@@ -24,6 +24,8 @@ MyBatis Log Test: INFO sql2 -  ==>  Preparing: update t_table set name = ? where
 MyBatis Log Test: INFO sql2 -  ==> Parameters: world(String), 123(Integer)
 MyBatis Log Test: WARN sql3 -  ==>  Preparing: delete from t_table where id = ?
 MyBatis Log Test: WARN sql3 -  ==> Parameters: 123(Integer)
+MyBatis Log Test: ERROR sql4 - ==>  Preparing: select * from t_table order by id asc 
+MyBatis Log Test: ERROR sql4 - ==>  Parameters: 
 ```
 MyBatis Log Plugin output executable sql statements:
 ```sql
