@@ -19,7 +19,6 @@ public class ConfigUtil {
     public static void init(Project project) {
         if(project != null) {
             setRunning(project, false);
-            setSqlFormat(project, false);
             setIndexNum(project, 1);
             setPreparing(project, StringConst.PREPARING);
             setParameters(project, StringConst.PARAMETERS);
@@ -30,20 +29,12 @@ public class ConfigUtil {
         PropertiesComponent.getInstance(project).setValue(StringConst.runningKey, value);
     }
 
-    public static void setSqlFormat(Project project, boolean value) {
-        PropertiesComponent.getInstance(project).setValue(StringConst.sqlFormatKey, value);
-    }
-
     public static void setIndexNum(Project project, int value) {
         PropertiesComponent.getInstance(project).setValue(StringConst.indexNumKey, value, 1);
     }
 
     public static boolean getRunning(Project project) {
         return PropertiesComponent.getInstance(project).getBoolean(StringConst.runningKey);
-    }
-
-    public static boolean getSqlFormat(Project project) {
-        return PropertiesComponent.getInstance(project).getBoolean(StringConst.sqlFormatKey);
     }
 
     public static int getIndexNum(Project project) {

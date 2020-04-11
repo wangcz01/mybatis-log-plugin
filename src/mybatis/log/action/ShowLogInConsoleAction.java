@@ -38,7 +38,6 @@ public class ShowLogInConsoleAction extends DumbAwareAction {
             ConfigUtil.setRunning(project, false);
             ConfigUtil.setIndexNum(project, 1);
         }, () -> ConfigUtil.getRunning(project));
-        executor.withFormat(() -> ConfigUtil.setSqlFormat(project, !ConfigUtil.getSqlFormat(project)));
         executor.withFilter(() -> {
             //启动filter配置
             FilterSetting dialog = new FilterSetting(project);

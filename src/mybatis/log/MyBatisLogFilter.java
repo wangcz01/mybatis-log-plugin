@@ -58,9 +58,6 @@ public class MyBatisLogFilter implements Filter {
                 ConfigUtil.setIndexNum(project, ++indexNum);
                 String restoreSql = RestoreSqlUtil.restoreSql(project, preparingLine, parametersLine);
                 PrintUtil.println(project, preStr, ConsoleViewContentType.USER_INPUT);
-                if(ConfigUtil.getSqlFormat(project)) {
-                    restoreSql = PrintUtil.format(restoreSql);
-                }
                 PrintUtil.println(project, restoreSql);
                 PrintUtil.println(project, StringConst.SPLIT_LINE, ConsoleViewContentType.USER_INPUT);
                 preparingLine = "";

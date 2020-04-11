@@ -55,7 +55,6 @@ public class TailContentExecutor implements Disposable {
     private Runnable myFilterAction;
     private Runnable myRerunAction;
     private Runnable myStopAction;
-    private Runnable myFormatAction;
     private Computable<Boolean> myStopEnabled;
     private String myTitle = "";//插件窗口标题
     private ConsoleView consoleView = null;
@@ -85,11 +84,6 @@ public class TailContentExecutor implements Disposable {
     public TailContentExecutor withStop(@NotNull Runnable stop, @NotNull Computable<Boolean> stopEnabled) {
         myStopAction = stop;
         myStopEnabled = stopEnabled;
-        return this;
-    }
-
-    public TailContentExecutor withFormat(Runnable format) {
-        myFormatAction = format;
         return this;
     }
 
@@ -166,10 +160,8 @@ public class TailContentExecutor implements Disposable {
     private ActionGroup createActionToolbar(JComponent consolePanel, ConsoleView consoleView, @NotNull final RunnerLayoutUi myUi, RunContentDescriptor contentDescriptor, Executor runExecutorInstance) {
         final DefaultActionGroup actionGroup = new DefaultActionGroup();
         actionGroup.add(new FilterAction());
-        actionGroup.add(new FormatAction());
         actionGroup.add(new RerunAction(consolePanel, consoleView));
         actionGroup.add(new StopAction());
-//        actionGroup.add(new MyCloseAction(runExecutorInstance, contentDescriptor, myProject));
         actionGroup.add(consoleView.createConsoleActions()[2]);
         actionGroup.add(consoleView.createConsoleActions()[3]);
         actionGroup.add(consoleView.createConsoleActions()[5]);
@@ -234,22 +226,6 @@ public class TailContentExecutor implements Disposable {
         public void update(AnActionEvent e) {
             e.getPresentation().setVisible(myStopAction != null);
             e.getPresentation().setEnabled(myStopEnabled != null && myStopEnabled.compute());
-        }
-    }
-
-    private class FormatAction extends ToggleAction implements DumbAware {
-        public FormatAction() {
-            super("Format Sql", "Format Sql", Icons.FormatIcon);
-        }
-
-        @Override
-        public boolean isSelected(AnActionEvent e) {
-            return e.getProject() == null ? false : ConfigUtil.getSqlFormat(e.getProject());
-        }
-
-        @Override
-        public void setSelected(AnActionEvent anActionEvent, boolean state) {
-            myFormatAction.run();
         }
     }
 

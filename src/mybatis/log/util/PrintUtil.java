@@ -5,8 +5,6 @@ import com.intellij.execution.ui.ConsoleViewContentType;
 import com.intellij.openapi.editor.markup.TextAttributes;
 import com.intellij.openapi.project.Project;
 import com.intellij.util.ui.UIUtil;
-import mybatis.log.hibernate.BasicFormatterImpl;
-import mybatis.log.hibernate.Formatter;
 import org.apache.commons.lang.StringUtils;
 import org.jetbrains.annotations.Nullable;
 
@@ -50,15 +48,5 @@ public class PrintUtil {
                 println(project, line, ConsoleViewContentType.ERROR_OUTPUT);
             }
         }
-    }
-
-    /**
-     * format sql statements
-     * @param sql
-     * @return
-     */
-    public static String format(String sql) {
-        Formatter formatter = new BasicFormatterImpl();
-        return formatter.format(sql);
     }
 }

@@ -15,9 +15,9 @@
         <div><a href="https://plugins.jetbrains.com/plugin/13905-mybatis-log-plugin"><b>MyBatis Log Plugin</b></a></div>
         <div>Thank you!</div>
         <div>------------------------------------------------------------</div>
-        <div>这个插件因为原先的实现机制并不好，导致经常出现一些版本兼容、注册失败以及性能的问题。</div>
+        <div>因为插件之前实现的机制并不好，导致经常出现一些版本兼容、注册失败以及性能的问题。</div>
         <div>所以此插件后续不再维护，将来有可能会被移除。</div>
-        <div>如果该插件在你机器上运行良好，并且你选择继续使用此版本，也是完全可以的。</div>
+        <div>如果该插件旧版本在你机器上运行良好，并且你选择继续使用旧版本(兼容到2019.*)，也是完全可以的。</div>
         <div>另外我用更好的方式重新实现了一个插件，并上传到官方的Marketplace，且设置了一个最低的价格($1/year)。</div>
         <div>如果你愿意体验并支持新的插件，请访问下面地址：
         <div><a href="https://plugins.jetbrains.com/plugin/13905-mybatis-log-plugin"><b>MyBatis Log Plugin</b></a></div>
@@ -32,7 +32,7 @@
     </change-notes>
 
     <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
-    <idea-version since-build="191" until-build="193.*"/>
+    <idea-version since-build="181" until-build="193.*"/>
 
     <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
          on how to target different products -->
