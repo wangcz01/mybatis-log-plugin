@@ -63,6 +63,8 @@ https://plugins.jetbrains.com/plugin/13905-mybatis-log-plugin/manual
 
 ## [关于许可和一些想说的话](https://github.com/kookob/mybatis-log-plugin/blob/master/ABOUT.md)
 
+## [激活失败问题处理](https://github.com/kookob/mybatis-log-plugin/blob/master/activation.md)
+
 
 
 
