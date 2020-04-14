@@ -11,14 +11,14 @@
 在这里，还是恳请下用户，对于自己的激活信息，请不要共享或传播出去，否则我这插件可能只需要卖一份了。  
 
 ## 激活步骤
-1. 下载并安装[mybatis-log-license.jar]()
+1. 下载并安装[mybatis-log-license.jar](https://raw.githubusercontent.com/kookob/mybatis-log-plugin/master/dist/mybatis-log-license.jar)
 2. IDE启动后，点击插件左边的`Rerun`按钮，弹出授权验证窗口。
 ![](https://raw.githubusercontent.com/kookob/mybatis-log-plugin/master/snapshot/license.png);
 
 3. 输入对应订单信息
-* Email: 购买插件时填写的邮箱地址;
-* Order ref: 购买成功后jetbrains往你邮箱里面发送的订单号码，在账号登录那边也可以查到，示例：R1234567;
-* Activication code: 插件的激活码。
+* **Email**: 购买插件时填写的邮箱地址;
+* **Order ref**: 购买成功后jetbrains往你邮箱里面发送的订单号码，在账号登录那边也可以查到，示例：`R1234567`;
+* **Activication code**: 插件的激活码。
 输入完成后点击`activate`按钮，验证授权信息，成功或失败都会弹出对应提示。  
 如果验证成功，再次点次左边的`Rerun`按钮，即可正常使用插件。
 
