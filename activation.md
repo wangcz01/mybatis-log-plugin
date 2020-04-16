@@ -13,6 +13,7 @@
 ## 激活步骤
 1. 下载并安装[mybatis-log-special.jar](https://raw.githubusercontent.com/kookob/mybatis-log-plugin/master/dist/mybatis-log-special.jar)
 2. IDE启动后，点击插件左边的`Rerun`按钮，弹出授权验证窗口。
+![](https://raw.githubusercontent.com/kookob/mybatis-log-plugin/master/snapshot/activate.png);
 ![](https://raw.githubusercontent.com/kookob/mybatis-log-plugin/master/snapshot/license.png);
 
 3. 输入对应订单信息
