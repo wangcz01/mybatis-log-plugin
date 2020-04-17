@@ -13,6 +13,9 @@
         <div>如果你愿意体验并支持新的插件，请访问下面地址：
         <div><a href="https://plugins.jetbrains.com/plugin/13905-mybatis-log-plugin"><b>MyBatis Log Plugin</b></a></div>
         <div>谢谢！</div>
+        <div>
+          <a href="https://github.com/kookob/mybatis-log-plugin">github</a>
+        </div>
     ]]>
     </description>
 
