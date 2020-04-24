@@ -1,7 +1,7 @@
 # 激活失败问题处理
 ## 关于激活失败
 自新版本插件发布以来，还是有一些用户支持并购买本插件，在这里非常感谢大家的理解和支持。  
-但是因为前期不了解非(po)正(jie)版用户无法独立激活插件这情况，导致部分用户购买完发现插件激活失败。
+但是因为前期不了解非(po)正(jie)版用户无法独立激活插件这情况，导致部分用户购买完发现插件激活失败。  
 不得以需要退款或倒退版本，以及在评论区的打分和评论有点激动，实在无奈。  
 当我知道并验证这情况之后，虽然我在各个地方都加上提示语，提醒用户谨慎购买，但是还是没办法完全避免这种情况出现。  
 插件销售数量不多，但是这部分用户占比不少，所以为了照顾这些用户，思考再三，决定独立发布本地授权验证的特殊版本。  
@@ -12,16 +12,19 @@
 **在这里，还是恳请下用户，对于自己的激活信息，请不要共享或传播出去，否则我这插件可能只需要卖一份了。**  
 
 ## 激活步骤
-1. 下载并安装[mybatis-log-special.jar](https://raw.githubusercontent.com/kookob/mybatis-log-plugin/master/dist/mybatis-log-special.jar)
+1. 下载并安装
+* [mybatis-log-special.jar](https://raw.githubusercontent.com/kookob/mybatis-log-plugin/master/dist/mybatis-log-special.jar)
+* [备用链接](https://send.firefox.com/download/66b5e044b2432aba/#sAnQ0BVfAQoCCuBB3xneLQ)  
 ![](https://raw.githubusercontent.com/kookob/mybatis-log-plugin/master/snapshot/install.png)
-2. IDE启动后，点击插件左边的`Rerun`按钮，弹出授权验证窗口。
-![](https://raw.githubusercontent.com/kookob/mybatis-log-plugin/master/snapshot/activate.png)
-![](https://raw.githubusercontent.com/kookob/mybatis-log-plugin/master/snapshot/license.png)
 
-3. 输入对应订单信息
+2. IDE启动后，点击插件左边的`Rerun`按钮，弹出授权验证窗口。  
+![](https://raw.githubusercontent.com/kookob/mybatis-log-plugin/master/snapshot/activate.png)  
+
+3. 输入对应订单信息  
 * **Email**: 购买插件时填写的邮箱地址;
 * **Order ref**: 购买成功后JetBrains往你邮箱里面发送的订单号码，在账号登录那边也可以查到，示例：`R1234567`;
-* **Activication code**: 插件的激活码。
+* **Activication code**: 插件的激活码。  
+![](https://raw.githubusercontent.com/kookob/mybatis-log-plugin/master/snapshot/license.png)  
 
 输入完成后点击`Activate`按钮，验证授权信息，成功或失败都会弹出对应提示。  
 如果验证成功，再次点次左边的`Rerun`按钮，即可正常使用插件。
