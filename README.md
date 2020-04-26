@@ -3,16 +3,18 @@
 
 # MyBatis Log Plugin
 ## Introduction
-- Restore mybatis sql log to original whole sql.
+- **Restore mybatis sql log to original whole sql.**
 - It will generate executable sql statements with replace ? to the really param value.
 - Selected the "Filter" button to filter contents that don't wanna display.
-- Selected the "Format Sql" button to format the generate sql statements.
+- Selected the "Format" button to format the generate sql statements.
+- Selected the "Rerun" button to enable the plugin.
 - Select the console sql log and right-click "Restore Sql" menu to restore sql.
+- **Navigate to each other between Java method and Mapper xml.**
 
 ## Button Features
-- **Sql Text**: Restore sql from text
-- **Filter**: Filter setting
-- **Format Sql**: Output beautiful formatted sql statements
+- **Text**: Restore sql from text
+- **Settings**: Setup filter rules and navigation switch
+- **Format**: Output beautiful formatted sql statements
 - **Rerun**: Rerun this plugin
 - **Stop**: Stop filter the sql log
 

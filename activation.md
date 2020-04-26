@@ -12,9 +12,8 @@
 **在这里，还是恳请下用户，对于自己的激活信息，请不要共享或传播出去，否则我这插件可能只需要卖一份了。**  
 
 ## 激活步骤
-1. 下载并安装
-* [mybatis-log-special.jar](https://raw.githubusercontent.com/kookob/mybatis-log-plugin/master/dist/mybatis-log-special.jar)
-* [备用链接](https://send.firefox.com/download/66b5e044b2432aba/#sAnQ0BVfAQoCCuBB3xneLQ)  
+1. 下载并安装(如果下载失败，需要科学上网)
+* [mybatis-log-special.jar](https://raw.githubusercontent.com/kookob/mybatis-log-plugin/master/dist/mybatis-log-special.jar)  
 ![](https://raw.githubusercontent.com/kookob/mybatis-log-plugin/master/snapshot/install.png)
 
 2. IDE启动后，点击插件左边的`Rerun`按钮，弹出授权验证窗口。  
@@ -34,6 +33,6 @@
 如遇到验证失败的情况，可以直接联系我，或在github上面提issue，我会尽快处理。  
 如果因为插件是收费的，购买后，不允许它存在问题，那插件真的做不到。  
 所以还是建议大家购买前先试用，能不能用，喜不喜欢用，再决定值不值得买。  
-特殊版本在功能更新和bug修复上面可能会存在一定的延迟，请大家谅解。  
+特殊版本在功能更新和bug修复上面可能会存在一定的延迟，请大家理解。  
 如果遇到JetBrains政策与本版本相冲突的，以JetBrains政策为准。  
 最后，再次谢谢大家的理解和支持！
