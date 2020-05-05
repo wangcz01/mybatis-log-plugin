@@ -1,22 +1,24 @@
-![mybatis-log-plugin](https://img.shields.io/jetbrains/plugin/v/10065-mybatis-log-plugin?label=version&style=flat-square)
-[![mybatis-log-plugin](https://img.shields.io/jetbrains/plugin/d/10065-mybatis-log-plugin?style=flat-square)](https://plugins.jetbrains.com/plugin/10065-mybatis-log-plugin/versions)
+![mybatis-log-plugin](https://img.shields.io/jetbrains/plugin/v/13905-mybatis-log-plugin?label=version&style=flat-square)
+[![mybatis-log-plugin](https://img.shields.io/jetbrains/plugin/d/13905-mybatis-log-plugin?style=flat-square)](https://plugins.jetbrains.com/plugin/13905-mybatis-log-plugin/versions)
 
 # MyBatis Log Plugin
-## Introduction
+## Features
 - **Restore mybatis sql log to original whole sql.**
-- It will generate executable sql statements with replace ? to the really param value.
+- **It will generate executable sql statements with replace ? to the really param value.**
 - Selected the "Filter" button to filter contents that don't wanna display.
 - Selected the "Format" button to format the generate sql statements.
 - Selected the "Rerun" button to enable the plugin.
 - Select the console sql log and right-click "Restore Sql" menu to restore sql.
 - **Navigate to each other between Java method and Mapper xml.**
 
+![](https://plugins.jetbrains.com/files/13905/25-page/image1.png)
+
 ## Button Features
 - **Text**: Restore sql from text
 - **Settings**: Setup filter rules and navigation switch
 - **Format**: Output beautiful formatted sql statements
 - **Rerun**: Rerun this plugin
-- **Stop**: Stop filter the sql log
+- **Stop**: Stop the plugin
 
 ## Example
 ```sql

@@ -38,13 +38,6 @@
             <add-to-group group-id="ToolsMenu" anchor="last"/>
             <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt shift O"/>
         </action>
-
-        <action class="mybatis.log.action.RestoreSqlForSelection" id="RestoreSqlAction0" text="Restore Sql from Selection"
-                description="Restore Sql from Selection">
-            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
-            <add-to-group group-id="ConsoleEditorPopupMenu" anchor="before" relative-to-action="ConsoleView.ClearAll"/>
-        </action>
-
     </actions>
 
 </idea-plugin>
