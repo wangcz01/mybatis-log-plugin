@@ -6,16 +6,7 @@
 
     <description>
     <![CDATA[
-        <div>因为插件之前实现的机制并不好，导致经常出现一些版本兼容、注册失败以及性能的问题。</div>
-        <div>所以此插件后续不再维护，将来有可能会被移除。</div>
-        <div>如果该插件旧版本在你机器上运行良好，并且你选择继续使用旧版本(兼容到2019.*)，也是完全可以的。</div>
-        <div>另外我用更好的方式重新实现了一个插件，并上传到官方的marketplace，目前暂时设置的价格是($1/year)。</div>
-        <div>如果你愿意体验并支持新的插件，请访问下面地址：
-        <div><a href="https://plugins.jetbrains.com/plugin/13905-mybatis-log-plugin"><b>MyBatis Log Plugin</b></a></div>
-        <div>谢谢！</div>
-        <div>
-          <a href="https://github.com/kookob/mybatis-log-plugin">github</a>
-        </div>
+        旧版插件停止维护
     ]]>
     </description>
 
