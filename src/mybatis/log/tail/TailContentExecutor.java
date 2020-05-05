@@ -24,7 +24,6 @@ import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.CommonShortcuts;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
-import com.intellij.openapi.actionSystem.ToggleAction;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.fileEditor.FileDocumentManager;
 import com.intellij.openapi.project.DumbAware;
@@ -33,7 +32,6 @@ import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.Disposer;
 import com.intellij.openapi.wm.ToolWindowManager;
 import com.intellij.ui.content.Content;
-import mybatis.log.Icons;
 import mybatis.log.util.ConfigUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -52,7 +50,6 @@ import java.util.List;
 public class TailContentExecutor implements Disposable {
     private final Project myProject;
     private final List<Filter> myFilterList = new ArrayList<>();
-    private Runnable myFilterAction;
     private Runnable myRerunAction;
     private Runnable myStopAction;
     private Computable<Boolean> myStopEnabled;
@@ -68,11 +65,6 @@ public class TailContentExecutor implements Disposable {
 
     public TailContentExecutor withTitle(String title) {
         myTitle = title;
-        return this;
-    }
-
-    public TailContentExecutor withFilter(Runnable filter) {
-        myFilterAction = filter;
         return this;
     }
 
@@ -159,7 +151,6 @@ public class TailContentExecutor implements Disposable {
     @NotNull
     private ActionGroup createActionToolbar(JComponent consolePanel, ConsoleView consoleView, @NotNull final RunnerLayoutUi myUi, RunContentDescriptor contentDescriptor, Executor runExecutorInstance) {
         final DefaultActionGroup actionGroup = new DefaultActionGroup();
-        actionGroup.add(new FilterAction());
         actionGroup.add(new RerunAction(consolePanel, consoleView));
         actionGroup.add(new StopAction());
         actionGroup.add(consoleView.createConsoleActions()[2]);
@@ -245,14 +236,4 @@ public class TailContentExecutor implements Disposable {
         }
     }
 
-    private class FilterAction extends AnAction implements DumbAware {
-        public FilterAction() {
-            super("Filter", "Filter", Icons.FilterIcon);
-        }
-
-        @Override
-        public void actionPerformed(AnActionEvent e) {
-            myFilterAction.run();
-        }
-    }
 }
