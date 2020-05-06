@@ -14,7 +14,7 @@
 ## 激活步骤
 1. 下载(如果下载失败，需要科学上网)
 * [mybatis-log-special.jar](https://raw.githubusercontent.com/kookob/mybatis-log-plugin/master/dist/mybatis-log-special.jar)  
-* [百度网盘备用下载链接](https://pan.baidu.com/s/1lx-NiNItqjJFy7DKb3ivjQ) 提取码: ibec  
+* [百度网盘备用下载链接](https://pan.baidu.com/s/1_82gJCndWZh9yA6IwxEJrQ) 提取码: s3r0  
 
 2. 安装(直接把jar包拖放到IDE窗口 或 参照下图)
 ![](https://raw.githubusercontent.com/kookob/mybatis-log-plugin/master/snapshot/install.png)
