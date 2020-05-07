@@ -30,7 +30,7 @@ MyBatis Log Test: WARN sql3 -  ==> Parameters: 123(Integer)
 MyBatis Log Test: ERROR sql4 - ==>  Preparing: select * from t_table order by id asc 
 MyBatis Log Test: ERROR sql4 - ==>  Parameters: 
 ```
-插件输出的完整的可执行的`SQL`语句如下:
+插件输出的完整的可执行的`SQL`语句如下：
 ```sql
 --  1  MyBatis Log Test: DEBUG sql1 -  ==>
  select *
@@ -58,14 +58,14 @@ https://plugins.jetbrains.com/plugin/13905-mybatis-log-plugin/manual
 [mybatis-log-plugin.jar](https://plugins.jetbrains.com/plugin/13905-mybatis-log-plugin/versions)  
 
 ## 销售价格
-**原始价格**: `$?/year`  
-**限时价格**: `$1/year`
+原始价格: `$?/year`  
+限时价格: **`$1/year`**
 
 ## 其他插件
 [Smart Jump](https://plugins.jetbrains.com/plugin/14053-smart-jump) 
 
 ## 关于
-* [关于许可和一些想说的话](https://github.com/kookob/mybatis-log-plugin/wiki/关于许可和一些想说的话)
-* [激活失败问题处理](https://github.com/kookob/mybatis-log-plugin/wiki/激活失败问题处理)
-* [插件购买流程](https://github.com/kookob/mybatis-log-plugin/wiki/插件购买流程)
+* [关于许可和一些想说的话](https://github.com/kookob/mybatis-log-plugin/blob/master/ABOUT.md)
+* [激活失败问题处理](https://github.com/kookob/mybatis-log-plugin/blob/master/activation.md)
+* [插件购买流程](https://github.com/kookob/mybatis-log-plugin/blob/master/buy.md)
 * 插件交流QQ群`875411635`
