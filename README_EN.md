@@ -1,25 +1,25 @@
 ![mybatis-log-plugin](https://img.shields.io/jetbrains/plugin/v/13905-mybatis-log-plugin?label=version&style=flat-square)
 [![mybatis-log-plugin](https://img.shields.io/jetbrains/plugin/d/13905-mybatis-log-plugin?style=flat-square)](https://plugins.jetbrains.com/plugin/13905-mybatis-log-plugin/versions)
 
-### [English](https://github.com/kookob/mybatis-log-plugin/blob/master/README_EN.md)  
+### [中文](https://github.com/kookob/mybatis-log-plugin/blob/master/README_EN.md)  
 
 # MyBatis Log Plugin
-## 插件功能
-- 还原`MyBatis`输出的日志为完整的`SQL`语句。
-- 把`SQL`日志里面的`?`替换为真正的参数值。
-- 选中要还原的`MyBatis`日志，右键点击菜单`Restore Sql`，还原`SQL`语句.
-- `Java`接口方法与`Mapper xml`文件互相跳转。
+## Features
+- Restore mybatis sql log to original whole sql.
+- It will generate executable sql statements with replace ? to the really param value.
+- Select the console sql log and right-click "Restore Sql" menu to restore sql.
+- Navigate to each other between Java method and Mapper xml.
 
 ![](https://plugins.jetbrains.com/files/13905/25-page/image1.png)
 
-## 按钮作用
-- **Text**: 从文本内容还原`SQL`语句
-- **Settings**: 导航跳转开关，配置不想要输出的`SQL`语句
-- **Format**: 输出格式化过的`SQL`语句
-- **Rerun**: 重启插件
-- **Stop**: 停止插件
+## Button Features
+- **Text**: Restore sql from text
+- **Settings**: Setup filter rules and navigation switch
+- **Format**: Output beautiful formatted sql statements
+- **Rerun**: Rerun plugin
+- **Stop**: Stop plugin
 
-## 日志示例
+## Example
 ```sql
 MyBatis Log Test: DEBUG sql1 -  ==>  Preparing: select * from t_table where name = ?
 MyBatis Log Test: DEBUG sql1 -  ==> Parameters: hello(String)
@@ -30,7 +30,7 @@ MyBatis Log Test: WARN sql3 -  ==> Parameters: 123(Integer)
 MyBatis Log Test: ERROR sql4 - ==>  Preparing: select * from t_table order by id asc 
 MyBatis Log Test: ERROR sql4 - ==>  Parameters: 
 ```
-插件输出的完整的可执行的`SQL`语句如下:
+MyBatis Log Plugin output executable sql statements:
 ```sql
 --  1  MyBatis Log Test: DEBUG sql1 -  ==>
  select *
@@ -51,21 +51,15 @@ MyBatis Log Test: ERROR sql4 - ==>  Parameters:
  FROM t_table order by id asc;
 ```
 
-## 使用手册
+## Manual
 https://plugins.jetbrains.com/plugin/13905-mybatis-log-plugin/manual
 
-## 安装下载
+## Download
 [mybatis-log-plugin.jar](https://plugins.jetbrains.com/plugin/13905-mybatis-log-plugin/versions)  
 
-## 销售价格
-**原始价格**: `$?/year`  
-**限时价格**: `$1/year`
+## Price
+**Original Price**: `$?/year`  
+**Flash Sale**: `$1/year`
 
-## 其他插件
+## Other Plugin
 [Smart Jump](https://plugins.jetbrains.com/plugin/14053-smart-jump) 
-
-## 关于
-* [关于许可和一些想说的话](https://github.com/kookob/mybatis-log-plugin/wiki/关于许可和一些想说的话)
-* [激活失败问题处理](https://github.com/kookob/mybatis-log-plugin/wiki/激活失败问题处理)
-* [插件购买流程](https://github.com/kookob/mybatis-log-plugin/wiki/插件购买流程)
-* 插件交流QQ群`875411635`
