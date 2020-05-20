@@ -15,9 +15,9 @@ https://plugins.jetbrains.com/plugin/13905-mybatis-log-plugin/pricing
 ![](https://raw.githubusercontent.com/kookob/mybatis-log-plugin/master/snapshot/buy/buy4.png)  
 
 4. 手机扫码支付，成功后，一般几分钟内就会往你邮箱里面发送一封许可订阅邮件，里面有跳转链接和`Order ref`。  
-点击链接，跳转到官网，没账号的可能需要先注册账号，找到`Download activation code for offline usage`下载离线激活码。
+点击链接，跳转到官网，没账号的需要先注册账号，找到`Download activation code for offline usage`下载离线激活码。
 
-5. 如果是正版IDE用户，安装完插件，重启IDE，直接用账号登录就可以激活插件了，如果不是正版用户，请参考这里  
+5. 如果是正版IDE用户，安装完插件，重启IDE，直接用账号登录就可以激活插件了，如果不是正版用户，请参考这里激活  
 [激活失败问题处理](https://github.com/kookob/mybatis-log-plugin/blob/master/activation.md)
 
 **如果插件在购买或激活的过程中有任何问题，随时与我联系，或在GitHub上面提issue，我一般都会及时回复，谢谢支持！**
