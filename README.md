@@ -65,7 +65,6 @@ https://plugins.jetbrains.com/plugin/13905-mybatis-log-plugin/manual
 [Smart Jump](https://plugins.jetbrains.com/plugin/14053-smart-jump) 
 
 ## 关于
-* [关于许可和一些想说的话](https://github.com/kookob/mybatis-log-plugin/blob/master/ABOUT.md)
 * [激活失败问题处理](https://github.com/kookob/mybatis-log-plugin/blob/master/activation.md)
 * [插件购买流程](https://github.com/kookob/mybatis-log-plugin/blob/master/buy.md)
 * 插件交流QQ群`875411635`
