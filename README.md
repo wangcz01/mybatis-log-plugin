@@ -58,8 +58,8 @@ https://plugins.jetbrains.com/plugin/13905-mybatis-log-plugin/manual
 [mybatis-log-plugin.jar](https://plugins.jetbrains.com/plugin/13905-mybatis-log-plugin/versions)  
 
 ## 销售价格
-原始价格: `$?/year`  
-限时价格: **`$1/year`**
+原始价格: `$5/year`  
+限时价格: `$1/year` (截止到7月1日)
 
 ## 其他插件
 [Smart Jump](https://plugins.jetbrains.com/plugin/14053-smart-jump) 

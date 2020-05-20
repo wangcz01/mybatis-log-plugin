@@ -58,8 +58,7 @@ https://plugins.jetbrains.com/plugin/13905-mybatis-log-plugin/manual
 [mybatis-log-plugin.jar](https://plugins.jetbrains.com/plugin/13905-mybatis-log-plugin/versions)  
 
 ## Price
-**Original Price**: `$?/year`  
-**Flash Sale**: `$1/year`
+`$5/year`
 
 ## Other Plugin
 [Smart Jump](https://plugins.jetbrains.com/plugin/14053-smart-jump) 
