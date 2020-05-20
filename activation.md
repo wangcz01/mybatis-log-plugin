@@ -1,13 +1,12 @@
 # 激活失败问题处理
 ## 关于激活失败
-因为JetBrains公司对破解版本的限制，导致仓库下载的插件版本无法直接激活。  
-为了兼容破解版的IDE用户，思考再三，决定发布本地授权验证的特殊版本。  
-这个决定，存在一定的风险的，因为线上正常渠道的版本，JB公司会把所有相关的销售，激活，证书，验证通通搞定，定时触发验证，防破解机制做的非常好。    
-目前发布的特殊版本，只是做了一些简单的授权验证，希望各位破解大佬，高抬贵手。  
+因为JetBrains公司对IDE破解版本的限制，导致仓库下载的插件无法直接激活。  
+为了兼容破解版的IDE用户，这里提供特殊版本进行授权验证。  
+特殊版本，安全机制很薄弱，希望各位破解大佬，手下留情。  
 **在这里，还是恳请下用户，对于自己的激活信息，请不要共享或传播出去。**  
 
 ## 激活步骤
-1. 下载(如果下载失败，需要科学上网)  
+1. 下载特殊版本(如果下载失败，需要科学上网)  
 [mybatis-log-special.jar](https://raw.githubusercontent.com/kookob/mybatis-log-plugin/master/dist/mybatis-log-special.jar)  
 
 2. 安装(直接把jar包拖放到IDE窗口 或 参照下图)
@@ -18,7 +17,7 @@
 
 4. 输入对应订单信息  
 * **Email**: 购买插件时填写的邮箱地址;
-* **Order ref**: 购买成功后JetBrains往你邮箱里面发送的订单号码，在账号登录那边也可以查到，示例：`R1234567`;
+* **Order ref**: 购买成功后JetBrains往你邮箱里面发送的订单号码，或在[官网账号](https://account.jetbrains.com/licenses)那边获取，示例：`R1234567`;
 * **Activication code**: 插件的激活码。  
 ![](https://raw.githubusercontent.com/kookob/mybatis-log-plugin/master/snapshot/license.png)  
 
