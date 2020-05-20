@@ -67,4 +67,4 @@ https://plugins.jetbrains.com/plugin/13905-mybatis-log-plugin/manual
 ## 关于
 * [激活失败问题处理](https://github.com/kookob/mybatis-log-plugin/blob/master/activation.md)
 * [插件购买流程](https://github.com/kookob/mybatis-log-plugin/blob/master/buy.md)
-* 插件交流QQ群`875411635`
+* [插件交流QQ群`875411635`](https://jq.qq.com/?_wv=1027&k=UysCVe9k)
