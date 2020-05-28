@@ -18,9 +18,10 @@
 
 4. 输入对应订单信息  
 * **Email**: 购买插件时填写的邮箱地址;
-* **Order ref**: 购买成功后JetBrains往你邮箱里面发送的订单号码，或在[官网账号](https://account.jetbrains.com/licenses)那边获取，示例：`R1234567`;
+* **Order ref**: 购买成功后JetBrains往你邮箱里面发送的订单号码，或在[官网账号](https://account.jetbrains.com/licenses)那边获取，示例：`R36*****`;
 * **Activication code**: 插件的激活码。  
 ![](https://raw.githubusercontent.com/kookob/mybatis-log-plugin/master/snapshot/orderref.png)  
+![](https://raw.githubusercontent.com/kookob/mybatis-log-plugin/master/snapshot/activicationcode.png)  
 ![](https://raw.githubusercontent.com/kookob/mybatis-log-plugin/master/snapshot/license.png)  
 
 输入完成后点击`Activate`按钮，验证授权信息，成功或失败都会弹出对应提示。  
