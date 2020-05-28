@@ -1,7 +1,7 @@
 # 激活失败问题处理
 ## 关于激活失败
-声明：插件特殊版本针对的是社区版，教育版，破解版，正版，以及各种环境激活失败的情况。
-因为JetBrains公司IDE的部分版本对收费插件的支持还在完善中，以及对破解版本的限制，导致仓库下载的插件无法直接激活。  
+**声明：插件特殊版本针对的是社区版，教育版，破解版，正版，以及各种环境激活失败的情况。**  
+因为JetBrains公司IDE的部分版本对收费插件的支持还在完善中，以及对破解版本的限制，导致仓库下载的插件可能无法直接激活。  
 为了兼容这部分的IDE用户，这里提供特殊版本进行授权验证。  
 特殊版本，安全机制很薄弱，希望各位破解大佬，手下留情。  
 **在这里，还是恳请下用户，对于自己的激活信息，请不要共享或传播出去。**  
@@ -10,7 +10,7 @@
 1. 下载特殊版本(如果下载失败，需要科学上网)  
 [mybatis-log-special.jar](https://raw.githubusercontent.com/kookob/mybatis-log-plugin/master/dist/mybatis-log-special.jar)  
 
-2. 安装(直接把jar包拖放到IDE窗口 或 参照下图)
+2. 卸载旧版重新安装特殊版本(**直接把jar包拖放到IDE编辑窗口*或参照下图)
 ![](https://raw.githubusercontent.com/kookob/mybatis-log-plugin/master/snapshot/install.png)
 
 3. IDE启动后，点击插件左边的`Rerun`按钮，弹出授权验证窗口。  
@@ -20,6 +20,7 @@
 * **Email**: 购买插件时填写的邮箱地址;
 * **Order ref**: 购买成功后JetBrains往你邮箱里面发送的订单号码，或在[官网账号](https://account.jetbrains.com/licenses)那边获取，示例：`R1234567`;
 * **Activication code**: 插件的激活码。  
+![](https://raw.githubusercontent.com/kookob/mybatis-log-plugin/master/snapshot/orderref.png)  
 ![](https://raw.githubusercontent.com/kookob/mybatis-log-plugin/master/snapshot/license.png)  
 
 输入完成后点击`Activate`按钮，验证授权信息，成功或失败都会弹出对应提示。  
