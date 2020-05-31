@@ -7,8 +7,9 @@
 **在这里，还是恳请下用户，对于自己的激活信息，请不要共享或传播出去。**  
 
 ## 激活步骤
-1. 下载特殊版本(如果下载失败，需要科学上网)  
-[mybatis-log-special.jar](https://raw.githubusercontent.com/kookob/mybatis-log-plugin/master/dist/mybatis-log-special.jar)  
+1. 下载特殊版本  
+* 原始地址：[mybatis-log-special.jar](https://raw.githubusercontent.com/kookob/mybatis-log-plugin/master/dist/mybatis-log-special.jar)
+* 加速地址：[mybatis-log-special.jar](https://gh-proxy.kookob.workers.dev/https://github.com/kookob/mybatis-log-plugin/blob/master/dist/mybatis-log-special.jar)
 
 2. 卸载原先版本重新安装特殊版本(**直接把jar包拖放到IDE编辑窗口**或参照下图)
 ![](https://raw.githubusercontent.com/kookob/mybatis-log-plugin/master/snapshot/install.png)
